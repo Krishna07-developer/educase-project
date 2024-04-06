@@ -9,7 +9,7 @@ const ProfilePage = () => {
 
   const handleSignOut = async()=>{
     try {
-      await fetch('http://localhost:3500/api/signout')
+      await fetch('https://educase-project.onrender.com/api/signout')
       dispatch(signOut())
     } catch (error) {
       console.log(error);

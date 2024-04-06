@@ -26,7 +26,7 @@ const Login = () => {
     e.preventDefault()
     
     try {
-      const res = await fetch('http://localhost:3500/api/login',{
+      const res = await fetch('https://educase-project.onrender.com/api/login',{
         method : 'POST',
         headers : {
           'Content-Type' : 'application/json',

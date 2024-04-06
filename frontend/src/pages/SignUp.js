@@ -30,7 +30,7 @@ const SignUp = () => {
   const handleSubmit = async (e)=>{
     e.preventDefault()
     try {
-      const response = await axios.post('http://localhost:3500/api/sign-up',formData)
+      const response = await axios.post('https://educase-project.onrender.com/api/sign-up',formData)
       // const responseData = response.data
       dispatch(signInSuccess((response.data)))
       navigate('/profile')
