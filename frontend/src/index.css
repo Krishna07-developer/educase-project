@@ -1,0 +1,33 @@
+* {
+  background-color: rgb(245, 243, 243);
+}
+
+.custom-btn-blue {
+  background-color : rgba(52, 52, 244, 0.854) !important
+}
+.custom-btn-violet{
+  background-color: rgba(0, 0, 255, 0.308) !important
+}
+.button-style {
+  min-width: 400px;
+  font-weight:600 !important
+}
+.form-group {
+  position: relative;
+  margin-top: 1rem;
+}
+
+
+.form-control{
+  min-width: 390px !important;
+  margin-inline: -1px !important;
+}
+
+label {
+  position: absolute;
+  top: -0.85rem;
+  left: 1rem;
+  color: #0c1eed;
+  pointer-events: none;
+  background-color: white;
+}
