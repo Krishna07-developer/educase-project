@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import axios from "axios"
-import {useNavigate} from "react-router-dom"
+import { useNavigate} from "react-router-dom"
+import { useDispatch } from 'react-redux';
+import { signInSuccess } from '../redux/user/userSlice';
 
 
 const SignUp = () => {
 
   const navigate = useNavigate()
+  const dispatch = useDispatch()
   const [formData,setFormData] = useState({
     fullname : '',
     emailaddress : '',
@@ -28,7 +31,8 @@ const SignUp = () => {
     e.preventDefault()
     try {
       const response = await axios.post('http://localhost:3500/api/sign-up',formData)
-      const responseData = response.data
+      // const responseData = response.data
+      dispatch(signInSuccess((response.data)))
       navigate('/profile')
       
     } catch (error) {
@@ -72,7 +76,7 @@ const SignUp = () => {
             </div>
           </div>
           <button className='btn custom-btn-blue text-white button-style fixed-bottom mb-3 ' style={{maxWidth : '390px',bottom:'20px',margin:'auto'}} >Create Account</button>
-          <span>Go to Home? <Link to={'/'}>Home</Link></span>
+          
         </form>
       </div>
     </div>
