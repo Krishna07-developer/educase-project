@@ -23,10 +23,7 @@ export const registerController = async (req,res)=>{
             companyname
         })
 
-        res.status(200).json({
-            success : true,
-            newUser
-        })
+        res.status(200).json(newUser)
     } catch (error) {
         console.log('Error registering user', error);
         res.status(500).json({error : 'Internal server error'})

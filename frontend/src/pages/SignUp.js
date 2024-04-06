@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import axios from "axios"
 import { useNavigate} from "react-router-dom"
 import { useDispatch } from 'react-redux';
 import { signInSuccess } from '../redux/user/userSlice';
@@ -30,9 +29,16 @@ const SignUp = () => {
   const handleSubmit = async (e)=>{
     e.preventDefault()
     try {
-      const response = await axios.post('https://educase-project.onrender.com/api/sign-up',formData)
-      // const responseData = response.data
-      dispatch(signInSuccess((response.data)))
+      const res = await fetch('https://educase-project.onrender.com/api/sign-up',{
+        method : 'POST',
+        headers : {
+          'Content-Type' : 'application/json',
+        },
+        body : JSON.stringify(formData)
+      })
+
+      const data = await res.json();
+      dispatch(signInSuccess((data)))
       navigate('/profile')
       
     } catch (error) {

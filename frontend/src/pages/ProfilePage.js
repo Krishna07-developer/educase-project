@@ -6,6 +6,7 @@ import {signOut} from "../redux/user/userSlice.js"
 const ProfilePage = () => {
   const dispatch = useDispatch()
   const {currentUser} = useSelector(state=>state.user)
+  console.log(currentUser);
 
   const handleSignOut = async()=>{
     try {
